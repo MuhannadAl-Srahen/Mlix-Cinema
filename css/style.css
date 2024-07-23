@@ -384,23 +384,53 @@ section h2 {
 }
 
 /* Media Queries for Responsive Design */
+
 @media (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
+@media (max-width: 992px) {
+  .details-top {
+    flex-direction: column;
+    align-items: center;
+    /* Center align the content */
+    text-align: center;
+    /* Center text content if needed */
+
   }
 
-  .card-title {
-    font-size: 20px;
+  .details-top img {
+    /* text-align: center; */
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
-  .card-text {
+  .details-top p {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-top {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-top img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .details-top p {
+    font-size: 14px;
+    text-align: center;
   }
 
   .search .container form input[type='text'],
@@ -410,5 +440,32 @@ section h2 {
 
   .search .container h2 {
     font-size: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header .logo {
+    font-size: 20px;
+  }
+
+  .main-header ul {
+    flex-direction: column;
+  }
+
+  .main-header ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 14px;
   }
 }
