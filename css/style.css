@@ -230,6 +230,11 @@ section h2 {
   height: 50%;
 }
 
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -245,6 +250,7 @@ section h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .swiper-rating {
@@ -258,7 +264,6 @@ section h2 {
   align-items: center;
   margin: 50px 0 30px;
 }
-
 
 .details-top img {
   width: 400px;
