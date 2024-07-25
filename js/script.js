@@ -37,7 +37,7 @@ async function displayPopularMovies() {
     const { results } = await FetchAPI('movie/popular');
 
     results.forEach((movie) => {
-      const img = movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : 'images/no-image.jpg';
+      const img = movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : 'images/no-image.jpg';
       const title = movie.title;
       const releaseDate = movie.release_date;
 
@@ -62,8 +62,6 @@ async function displayPopularMovies() {
       document.getElementById('popular-movies').appendChild(div);
     });
     const cards = document.getElementById('popular-movies');
-    cards.removeChild(cards.lastElementChild);
-    cards.removeChild(cards.lastElementChild);
 
   } catch (error) {
     console.log(error);
@@ -76,7 +74,7 @@ async function displayPopularTVShow() {
     const { results } = await FetchAPI('tv/popular');
 
     results.forEach((tv) => {
-      const img = tv.backdrop_path ? `https://image.tmdb.org/t/p/w500${tv.backdrop_path}` : 'images/no-image.jpg';
+      const img = tv.backdrop_path ? `https://image.tmdb.org/t/p/w1280${tv.backdrop_path}` : 'images/no-image.jpg';
       const title = tv.name;
       const releaseDate = tv.first_air_date;
 
@@ -100,8 +98,6 @@ async function displayPopularTVShow() {
       document.getElementById('popular-shows').appendChild(div);
     });
     const cards = document.getElementById('popular-shows');
-    cards.removeChild(cards.lastElementChild);
-    cards.removeChild(cards.lastElementChild);
 
   } catch (error) {
     console.log(error);
@@ -123,7 +119,7 @@ async function showMovieDetails() {
     <div class="details-top">
           <div class="img-container">
             <img 
-              src="${movieDetails.backdrop_path ? `https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}` : 'images/no-image.jpg'}"
+              src="${movieDetails.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}` : 'images/no-image.jpg'}"
               class="card-img-top"
               alt="${movieDetails.title}"
             />
@@ -181,7 +177,7 @@ async function showTVShowDetails() {
     <div class="details-top">
           <div class="img-container">
             <img 
-              src="${tvShowDetails.backdrop_path ? `https://image.tmdb.org/t/p/w500${tvShowDetails.backdrop_path}` : 'images/no-image.jpg'}"
+              src="${tvShowDetails.backdrop_path ? `https://image.tmdb.org/t/p/w1280${tvShowDetails.backdrop_path}` : 'images/no-image.jpg'}"
               class="card-img-top"
               alt="${tvShowDetails.name}"
             />
@@ -233,7 +229,7 @@ async function displaySlider() {
 
       div.innerHTML = `
           <a href="movie-details.html?id=${movie.id}">
-            <img src="${movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'images/no-image.jpg'}" alt="${movie.title}" />
+            <img src="${movie.poster_path ? `https://image.tmdb.org/t/p/w1280${movie.poster_path}` : 'images/no-image.jpg'}" alt="${movie.title}" />
           </a>
           <h4 class="swiper-rating">
             <i class="fas fa-star text-secondary"></i> ${movie.vote_average.toFixed(1)} / 10
