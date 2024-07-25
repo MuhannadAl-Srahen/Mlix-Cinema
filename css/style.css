@@ -266,7 +266,6 @@ section h2 {
   margin-right: 60px;
   object-fit: fill;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
   position: relative;
   border-radius: 8px;
 }
@@ -384,24 +383,26 @@ section h2 {
 
 /* Media Queries for Responsive Design */
 
-@media (max-width: 1200px) {
+/* For large screens (max-width: 1200px) */
+@media (max-width: 1260px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* For medium screens (max-width: 992px) */
 @media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .details-top {
     flex-direction: column;
     align-items: center;
-    /* Center align the content */
     text-align: center;
-    /* Center text content if needed */
-
   }
 
   .details-top img {
-    /* text-align: center; */
     width: 100%;
     height: auto;
     margin-right: 0;
@@ -411,8 +412,13 @@ section h2 {
   .details-top p {
     font-size: 16px;
   }
+
+  .container {
+    max-width: fit-content;
+  }
 }
 
+/* For small screens (max-width: 768px) */
 @media (max-width: 768px) {
   .details-top {
     padding: 20px;
@@ -444,9 +450,18 @@ section h2 {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .container {
+    max-width: fit-content;
+  }
 }
 
+/* For extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
+  .container {
+    max-width: fit-content;
+  }
+
   .main-header .logo {
     font-size: 20px;
   }
