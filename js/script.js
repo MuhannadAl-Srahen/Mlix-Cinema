@@ -59,47 +59,51 @@ async function displayPopularMovies() {
   try {
     const { results } = await FetchAPI('movie/popular');
 
+    if (!results.length) {
+      showError('No popular movies found.');
+      return;
+    }
+
     results.forEach((movie) => {
       const img = movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : 'images/no-image.jpg';
       const title = movie.title;
       const releaseDate = movie.release_date;
 
-
       const div = document.createElement('div');
       div.classList.add('card');
-
-      // Construct the HTML content
       div.innerHTML = `
-      <div class="card-img-wrapper">
-      <a href="movie-details.html?id=${movie.id}">
-      <img src="${img}" class="card-img-top" alt="${title}" />
-      </a>
-      </div>
-      <div class="card-body">
-      <h5 class="card-title">${title}</h5>
-      <p class="card-text">
-      <small class="text-muted">Release: ${releaseDate}</small>
-      </p>
-      </div>`;
-
+        <div class="card-img-wrapper">
+          <a href="movie-details.html?id=${movie.id}">
+            <img src="${img}" class="card-img-top" alt="${title}" />
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <p class="card-text">
+            <small class="text-muted">Release: ${releaseDate}</small>
+          </p>
+        </div>
+      `;
       document.getElementById('popular-movies').appendChild(div);
     });
-    const cards = document.getElementById('popular-movies');
 
   } catch (error) {
-    console.log(error);
+    showError('Failed to load popular movies. Please try again later.');
+    console.error('Error fetching popular movies:', error);
   }
 }
 
 // Show 18 popular Tv show
 async function displayPopularTVShow() {
   try {
-
     const { results } = await FetchAPI('tv/popular');
 
+    if (!results.length) {
+      showError('No popular TV shows found.');
+      return;
+    }
 
     results.forEach((tv) => {
-
       const img = tv.backdrop_path ? `https://image.tmdb.org/t/p/w1280${tv.backdrop_path}` : 'images/no-image.jpg';
       const title = tv.name;
       const releaseDate = tv.first_air_date;
@@ -126,9 +130,10 @@ async function displayPopularTVShow() {
 
   } catch (error) {
     console.error('Failed to load popular TV shows:', error);
-    document.getElementById('popular-shows').innerHTML = `<p class="error">Failed to load popular TV shows. Please try again later.</p>`;
+    showError('Failed to load popular TV shows. Please try again later.');
   }
 }
+console.log(document.getElementById('popular-shows'));
 
 
 async function showMovieDetails() {
