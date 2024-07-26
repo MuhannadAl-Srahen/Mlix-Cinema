@@ -329,8 +329,6 @@ function displayPagination() {
       return;
     }
     displaySearchResults(results);
-
-
   });
 
   // Add event listeners to prev page
