@@ -1,6 +1,6 @@
 # Mlix-Cinema
 
-M-Cinema is a web application designed for movie enthusiasts to browse, search, and discover movies. The application is built using JavaScript, CSS, and HTML.
+Mlix-Cinema is a web application designed for movie enthusiasts to browse, search, and discover movies. The application is built using JavaScript, CSS, and HTML.
 
 ## Table of Contents
 
@@ -22,8 +22,8 @@ M-Cinema is a web application designed for movie enthusiasts to browse, search, 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/MuhannadAl-Srahen/M-Cinema.git
-    cd M-Cinema
+    git clone https://github.com/MuhannadAl-Srahen/Mlix-Cinema.git
+    cd Mlix-Cinema
     ```
 
 2. Open the project in your favorite code editor.
